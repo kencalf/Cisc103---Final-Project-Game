@@ -1,0 +1,92 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+background: #FAFAFA;
+background-size:100%;
+font-family: 'Press Start 2P', cursive;
+font-size:10px;
+}
+
+#colors{
+top:0px;
+left:0px; 
+padding:0px;
+position:fixed; 
+background:rgba(255,255,255,.2);
+height:100%;
+z-index:0;
+text-align:center;
+border-right:5px solid #333;
+}
+
+#colors{
+opacity:1;
+}
+
+#colors p {
+background:none;
+padding:7px;
+color:#000;
+margin:0px;
+top:0px;
+left:0px;
+width:90%;
+border-top:3px solid #222;
+}
+
+.colors:hover {
+cursor:pointer;
+opacity:1;
+background:#CCC;
+border-radius:10px;
+}
+
+
+#orb,#orb1,#orb2,#orb3,#orb4,#gold,#gold2,#gold3,#gold4,#gold5,#gold6,#gold7,#gold8 {
+-webkit-transition: all .8s  ease-in-out;
+-moz-transition: all .8s  ease-in-out;
+-o-transition: all .8s  ease-in-out;
+transition: all .8s  ease-in-outt;
+z-index:998;
+opacity:1;
+}
+
+#user{
+-webkit-transition: all .3s  ease-in-out;
+-moz-transition: all .3s  ease-in-out;
+-o-transition: all .3s  ease-in-out;
+transition: all .3s  ease-in-outt;
+z-index:999;
+border:0px solid #444;
+border-radius:400px;
+padding:0px;
+}
+
+#place{
+bottom:-1px;
+left:85px; 
+padding:20px;
+position:fixed; 
+background:rgba(0,0,0,0);
+height:10px;
+width:100%;
+z-index:-1;
+border:#FFF 1px solid;
+color:#000;
+}
+
+#score {
+font-size:50px;
+text-align:center;
+color:#000;
+}
+
+
+#restart:hover {
+cursor:pointer;
+}
+
+
+#speed1,#speed2,#speed3,#speed4 {
+padding:10px;}

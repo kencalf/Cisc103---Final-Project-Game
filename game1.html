@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+
+<script>
+
+var rightleft =1
+
+
+function MovecarRight()
+{ rightleft = rightleft +10
+document.getElementById("car").style.left = rightleft + "px"
+}
+
+function MovecarLeft()
+{ rightleft = rightleft -10
+document.getElementById("car").style.left = rightleft + "px"
+}
+
+function MovecarDown()
+{ rightleft = rightleft +10
+document.getElementById("car").style.top = rightleft + "px"
+}
+
+function MovecarUp()
+{ rightleft = rightleft -10
+document.getElementById("car").style.top = rightleft + "px"
+}
+
+
+
+
+</script>
+
+
+
+</head>
+
+<body style="background:#eff3f4;">
+
+
+<p id="p1"> Which arrow did you push? </p>
+
+
+
+<img src="img/left.png" width="70"   onclick = "MovecarLeft()">
+<img src ="img/right.png" width="70"  onclick = "MovecarRight()"><br>
+<img src ="img/down.png" width="70"  onclick = "MovecarDown()"><br>
+<img src ="img/up.png" width="70"  onclick = "MovecarUp()"><br>
+
+<br />
+<img src="img/blue2.gif" width="200" id="car" style="position:absolute; margin:0px;" loop="infinite" />
+
+
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Gold Game</title>
+<link href="style/styles.css" type="text/css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+<script src="style/custom.js"></script>
+
+
+<script>
+function startit() {
+//	getName();
+	SpawnGold();
+	SpawnOrbs();
+	startGame();
+}
+function getName() {
+   var name1 = prompt ("Enter Name")
+   document.getElementById("name").innerHTML = name1
+}
+
+
+
+//////////////////////Establish al zero variables
+var rightleft = 0
+var topbottom = 0
+var xpos = 0
+var xpos1 = 0
+var x1pos = 0
+var x1pos1 = 0
+var x2pos = 0
+var x2pos1 = 0
+var x3pos = 0
+var x3pos1 = 0
+var ypos = 0
+var zpos = 0
+var zpos1 = 0
+var apos = 0
+var apos1 = 0
+var bpos = 0
+var bpos1 = 0
+var cpos = 0
+var cpos1 = 0
+var dpos = 0
+var dpos1 = 0
+var epos = 0
+var epos1 = 0
+var fpos = 0
+var ypos = 0
+var ypos1 = 0
+var score = 0
+var power = 0
+////////////////////////Establish Variable Sizes of enemies and gold
+var size1 = Math.floor(Math.random() * 100 + 30)
+var size2 = Math.floor(Math.random() * 100 + 30)
+var size3 = Math.floor(Math.random() * 100 + 30)
+var size4 = Math.floor(Math.random() * 100 + 30)
+var size5 = Math.floor(Math.random() * 100 + 30)
+var size6 = Math.floor(Math.random() * 100 + 30)
+var size7 = Math.floor(Math.random() * 100 + 30)
+var size8 = Math.floor(Math.random() * 100 + 30)
+////////////////////////////////Character Movement 
+var speed = 60
+	
+function speed1(){ 
+speed = 10
+document.getElementById("speed1").style.background = "grey"
+document.getElementById("speed2").style.background = "white"
+document.getElementById("speed3").style.background = "white"
+document.getElementById("speed4").style.background = "white"
+}
+function speed2(){ 
+speed = 30
+document.getElementById("speed2").style.background = "grey"
+document.getElementById("speed1").style.background = "white"
+document.getElementById("speed3").style.background = "white"
+document.getElementById("speed4").style.background = "white"
+}
+function speed3(){ 
+speed = 60
+document.getElementById("speed3").style.background = "grey"
+document.getElementById("speed2").style.background = "white"
+document.getElementById("speed1").style.background = "white"
+document.getElementById("speed4").style.background = "white"
+}
+
+function speed4(){ 
+speed = 100
+document.getElementById("speed3").style.background = "white"
+document.getElementById("speed2").style.background = "white"
+document.getElementById("speed1").style.background = "white"
+document.getElementById("speed4").style.background = "grey"
+}
+
+
+function startGame(keys) {	
+
+
+
+
+////////////////   MOVE RIGHT
+	if (keys.keyCode == 39) {
+		rightleft = rightleft + speed
+		document.getElementById("user").style.left =  rightleft + "px"	
+	}
+////////////////     MOVE LEFT
+	   else if (keys.keyCode == 37) {	
+		rightleft = rightleft - speed
+		document.getElementById("user").style.left = rightleft + "px"
+	   }	
+////////////////   MOVE UP
+	 else if (keys.keyCode == 38) {
+		topbottom = topbottom - speed
+		document.getElementById("user").style.top = topbottom + "px"
+	 }
+////////////////   MOVE DOWN
+		else if (keys.keyCode == 40) {	
+		topbottom = topbottom + speed
+		document.getElementById("user").style.top = topbottom + "px" 
+		}
+				
+//////////////// Collisions with gold pieces
+	
+		if ((rightleft > (ypos - 50)) && (rightleft < (ypos + 50)))  { 
+		    if ((topbottom > (ypos1 - 50)) && (topbottom < (ypos1 + 50)))  { 
+		        score = score + 1
+				document.getElementById("gold").style.left = "-1000px"
+				document.getElementById("gold").style.bottom = "-1000px"
+				document.getElementById("score").style.color = "#FC0" 
+				ypos1 = ypos1-1000
+				ypos = ypos-1000
+			 }		 
+		}	
+		
+		 if ((rightleft > (zpos - 50)) && (rightleft < (zpos + 50)))  { 
+		    if ((topbottom > (zpos1 - 50)) && (topbottom < (zpos1 + 50)))  { 
+		        score = score + 1
+				document.getElementById("gold2").style.left = "-1000px"
+				document.getElementById("gold2").style.bottom = "-1000px"
+				document.getElementById("score").style.color = "#FC0" 
+				zpos1 = zpos1-1000
+				zpos = zpos-1000
+			 }		 
+		}
+		
+		
+		 if ((rightleft > (apos - 50)) && (rightleft < (apos + 50)))  { 
+		    if ((topbottom > (apos1 - 50)) && (topbottom < (apos1 + 50)))  { 
+		        score = score + 1
+				document.getElementById("gold3").style.left = "-1000px"
+				document.getElementById("gold3").style.bottom = "-1000px"
+				document.getElementById("score").style.color = "#FC0" 
+				apos1 = apos1-1000
+				apos = apos-1000
+			 }		 
+		}
+		
+		
+		
+		
+		 if ((rightleft > (bpos - 50)) && (rightleft < (bpos + 50)))  { 
+		    if ((topbottom > (bpos1 - 50)) && (topbottom < (bpos1 + 50)))  { 
+		        score = score + 1
+				document.getElementById("gold4").style.left = "-1000px"
+				document.getElementById("gold4").style.bottom = "-1000px"
+				document.getElementById("score").style.color = "#FC0" 
+				bpos1 = bpos1-1000
+				bpos = bpos-1000
+			 }		 
+		}
+		
+		
+		 if ((rightleft > (cpos - 50)) && (rightleft < (cpos + 50)))  { 
+		    if ((topbottom > (cpos1 - 50)) && (topbottom < (cpos1 + 50)))  { 
+		        score = score + 1
+				document.getElementById("gold5").style.left = "-1000px"
+				document.getElementById("gold5").style.bottom = "-1000px"
+				document.getElementById("score").style.color = "#FC0" 
+				cpos1 = cpos1-1000
+				cpos = cpos-1000
+			 }		 
+		}
+		
+		 if ((rightleft > (dpos - 50)) && (rightleft < (dpos + 50)))  { 
+		    if ((topbottom > (dpos1 - 50)) && (topbottom < (dpos1 + 50)))  { 
+		        score = score + 1
+				document.getElementById("gold6").style.left = "-1000px"
+				document.getElementById("gold6").style.bottom = "-1000px"
+				document.getElementById("score").style.color = "#FC0" 
+				dpos1 = dpos1-1000
+				dpos = dpos-1000
+			 }		 
+		}
+		
+		
+		
+//collisions with enemies
+	
+		if ((rightleft > (xpos - 30)) && (rightleft < (xpos + 30)))  { 
+		    if ((topbottom > (xpos1 - 30)) && (topbottom < (xpos1 + 30)))  { 
+		        score = score - 1  
+			 }		 
+		}	
+		
+		if ((rightleft > (x1pos - 30)) && (rightleft < (x1pos + 30)))  { 
+		    if ((topbottom > (x1pos1 - 30)) && (topbottom < (x1pos1 + 30)))  { 
+		        score = score - 1  
+			 }		 
+		}	
+		
+		
+		if ((rightleft > (x2pos - 30)) && (rightleft < (x2pos + 30)))  { 
+		    if ((topbottom > (x2pos1 - 30)) && (topbottom < (x2pos1 + 30)))  { 
+		        score = score - 1  
+			 }		 
+		}	
+		
+		
+		
+		if ((rightleft > (x3pos - 30)) && (rightleft < (x3pos + 30)))  { 
+		    if ((topbottom > (x3pos1 - 30)) && (topbottom < (x3pos1 + 30)))  { 
+		        score = score - 1  
+			 }		 
+		}	
+		
+document.getElementById("score").innerHTML = score 		
+//gives coordinates of the users character at all times (x and y)
+document.getElementById('temp').innerHTML = "X : " + rightleft + " Y : " + topbottom;
+document.getElementById('temp2').innerHTML = "X : " + xpos + " Y : " + xpos1;
+
+setTimeout(function(){startGame()},0) 
+
+}
+	
+</script></head>
+<body onkeypress="startGame(event)" onload="startit()" >
+<div id="colors">
+<br /><br /><br /><br /><br /><br /><br /><br /><p style="float:left;"> Color </p><br />
+<img src="img/down.png"  width="30"  onclick="changeGreen()"  class="colors" id="green" style="opacity:1" /><br />
+<img src="img/blue.png"   width="30"  onclick="changeBlue()"   class="colors" id="blue" style="opacity:.6"/><br />
+<img src="img/red.png"    width="30"  onclick="changeRed()"    class="colors" id="red" style="opacity:.6" /><br />
+<p>Speed</p>
+<h3 onclick="speed1()" id="speed1">Slow</h3>
+<h3 onclick="speed2()" id="speed2">Medium</h3>
+<h3 onclick="speed3()" id="speed3">Fast</h3>
+<h3 onclick="speed4()" id="speed4">Pro</h3>
+<p>Score</p>
+<h1 id="score"> <b style="color:#FC0; font-size:15px;">0</b></h1>
+<p>Player:</p><p id="name" style="color:#F00"></p>
+<p style="float:left; margin-top:20px; background:none;" onclick="restart()" id="restart">RESTART</p>
+</div>
+<img src="img/enemy.png" width="70"  id="orb" style=" position:absolute; top:0; left:0;"/>
+<img src="img/enemy.png" width="70"  id="orb1" style=" position:absolute; top:0; left:0;"/>
+<img src="img/enemy.png" width="70"  id="orb2" style=" position:absolute; top:0; left:0;"/>
+<img src="img/enemy.png" width="70"  id="orb3" style=" position:absolute; top:0; left:0;"/>
+<img src="img/down.png" width="70" id="user" style=" position:absolute; top:0; left:0;" onload="SpawnOrbs()"/>
+<img src="img/gold.png" width="70" id="gold"  class="gold" style=" position:absolute; top:0; left:0; "/>
+<img src="img/gold.png" width="70" id="gold2" class="gold" style=" position:absolute; top:0; left:0;"/>
+<img src="img/gold.png" width="70" id="gold3" class="gold" style=" position:absolute; top:0; left:0;"/>
+<img src="img/gold.png" width="70" id="gold4" class="gold" style=" position:absolute; top:0; left:0;"/>
+<img src="img/gold.png" width="70" id="gold5" class="gold" style=" position:absolute; top:0; left:0;"/>
+<img src="img/gold.png" width="70" id="gold6" class="gold" style=" position:absolute; top:0; left:0;"/>
+<img src="img/gold.png" width="70" id="gold7" class="gold" style=" position:absolute; top:0; left:0;"/>
+<p style="color:#555; font-size:50px; padding:10px; margin:0px; top:0px;position:fixed;right:0px;">
+<span id="timer" ></span></p>
+<div id="place"><p id = "temp" style="padding:0px; margin:0px;">  <p id = "temp2" style="padding:0px; margin:0px;">  </p></div>
+<embed src="" id="point1" width="140" height="40" autostart="true" loop="FALSE" style="display:none;"></embed>
+</body>
+</html>
